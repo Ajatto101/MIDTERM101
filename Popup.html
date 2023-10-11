@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MIDTERM EXAM</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+		   
+		   <style type="text/css">
+  html, body { margin: 0; padding: 0; height: 100%; }
+  #map { min-height: 100%; }
+</style>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.98049275044645, -87.7183987472887],
+              zoom: 17
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 20,
+               minZoom: 4
+            }).addTo(map);
+			
+			var marker1 = L.marker([41.98077225541198, -87.72038702331147]).addTo(map); // Police Station
+			var marker2 = L.marker([41.980421332991654, -87.71920685138372]).addTo(map); // Ronald Williams library
+			var marker3 = L.marker([41.97978328727013, -87.71966819121897]).addTo(map); // NEIU Nest
+			var marker4 = L.marker([41.97781328075902, -87.71761898360991]).addTo(map); // Physical Education Complex
+			var marker5 = L.marker([41.980573079894754, -87.71642912025742]).addTo(map); // NEIU Science Building (BBH)
+			
+			
+			var pic1 = '<img src="https://neiuindependent.org/wp-content/uploads/2023/09/100_6809.jpg" width="300">';
+            var pic2 = '<img src="https://www.neiu.edu/sites/default/files/styles/feature_image/public/hub.neiu.edu/news-images/2017/01/19/LOC-main-campus-library.jpg?itok=o60iSavx" width="300">';
+			var pic3 = '<img src="https://primeraeng.com/wp-content/uploads/2017/08/Nest_0540_JohnnyStevens_Hero.jpg" width="300">';
+            var pic4 = '<img src="https://www.neiu.edu/sites/default/files/styles/feature_image/public/university-life/unit-dept-homepage-feature-images/2016/02/15/campus-rec-center.jpg?itok=4lc-4EYE" width="300">';
+            var pic5 = '<img src="https://www.neiu.edu/sites/neiu.edu/files/brand/body-images/neiu-bbh-wallpaper.jpg" width="300">';
+
+			
+			
+			marker1.bindPopup('<p style="color:royalblue; font-weight:bold"> NEIU Police Station: In case of an emergency on campus. contact info. +17734424100. Open 24 hrs </p>' + pic1);
+            marker2.bindPopup('<p style="color:royalblue; font-weight:bold"> Ronald Williams Library: GE&S related Textbooks are provided to GE&S students.Contact info. +17734424400. Open 8am-9pm M-T, F 8am-6pm, Sat 9am-5pm, & Sun 12pm-8pm </p>' + pic2);
+			marker3.bindPopup('<p style="color:royalblue; font-weight:bold"> NEIU Nest: This is the campus live-in building for students of all majors. Contact. +17734424663. website is americancampus.com </p>' + pic3);
+            marker4.bindPopup('<p style="color:royalblue; font-weight:bold"> Physical Education Complex: This is where the gym and other sport activities/leisure takes place. Contact info. +17734424135 </p>' + pic4);
+			marker5.bindPopup('<p style="color:royalblue; font-weight:bold"> NEIU Science Building (BBH): This is where most of the GE&S classes take place. Contact info. +17735834050 </p>' + pic5);
+            
+
+        </script>
+   </body>
+</html>
